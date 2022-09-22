@@ -1,0 +1,29 @@
+*wintweak.txt*  Vim9 plugin for extra GUI options in Windows GVim.
+
+Author:  Imran H.
+License: MIT License
+----------------------------------------------------------------
+
+*FUNCTIONS*
+
+	:call libcallnr("vimtweak.dll", "SetAlpha", 220)
+	:call libcallnr("vimtweak.dll", "EnableMaximize", 1)
+	:call libcallnr("vimtweak.dll", "EnableCaption", 1)
+	:call libcallnr("vimtweak.dll", "EnableTopMost", 1)
+	:call libcallnr("vimtweak.dll", "ToggleFullScreen", 0)
+
+*MAPPINGS*
+
+Press `<F10>` to open the popup menu; type `<ESC>` or `q` to quit.
+To change it from the default:
+
+	nmap <silent> <KEY> <Plug>(Wintweak)
+
+To map the individual functions:
+
+	nmap <silent> <KEY> <Plug>(Wintweak)
+	nmap <silent> <KEY> <Plug>(Wintweak_FullScreen)
+	nmap <silent> <KEY> <Plug>(Wintweak_GUIOptions)
+	nmap <silent> <KEY> <Plug>(Wintweak_Transparency)
+	nmap <silent> <KEY> <Plug>(Wintweak_Topmost)
+	nmap <silent> <KEY> <Plug>(Wintweak_Caption)

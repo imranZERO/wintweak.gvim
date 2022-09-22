@@ -1,0 +1,1 @@
+cl /LD vimtweak.c user32.lib gdi32.lib
