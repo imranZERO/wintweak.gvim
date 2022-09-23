@@ -22,13 +22,13 @@ Use your preferred plugin manager or vim's built-in package management; see `:he
 Usage
 -----
 
-Press `<F10>` to open the popup menu; type `<ESC>` or `q` to quit.
-
-To change it from the default:
+Create a keymap like this to open the popup menu:
 
 ```vim
 nmap <silent> <KEY> <Plug>(Wintweak)
 ```
+
+Press `<KEY>` to open the popup menu; type `<ESC>` or `q` to quit.
 
 To map the individual functions:
 

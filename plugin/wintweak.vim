@@ -95,6 +95,4 @@ if has('gui_running')
     nnoremap <Plug>(Wintweak_Transparency) :call ToggleTransparency()<cr>
     nnoremap <Plug>(Wintweak_Topmost) :call ToggleTopmost()<cr>
     nnoremap <Plug>(Wintweak_Caption) :call ToggleCaption()<cr>
-
-    nmap <silent> <F10> <Plug>(Wintweak)
 endif
