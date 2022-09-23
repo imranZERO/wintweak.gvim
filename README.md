@@ -19,8 +19,6 @@ Requirements: `Windows XP+`, `Vim 9.0`, `GVim`
 
 Use your preferred plugin manager or vim's built-in package management; see `:help packages` for more information.
 
-After installing the plugin, go to the directory where you installed it and copy `bin\wintweak.dll` to a directory in your path.
-
 Usage
 -----
 
