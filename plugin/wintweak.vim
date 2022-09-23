@@ -39,23 +39,25 @@ if has('gui_running')
         endif
     enddef
 
+    var path = expand('<sfile>:p:h')
+
     def g:ToggleFullScreen(): void
         if g:Fullscreen == 0
             g:Fullscreen = 1
-            libcallnr("wintweak.dll", "ToggleFullScreen", 1)
+            libcallnr(path .. "/../bin/wintweak.dll", "ToggleFullScreen", 1)
         else
             g:Caption = 0
-            libcallnr("wintweak.dll", "ToggleFullScreen", 0)
+            libcallnr(path .. "/../bin/wintweak.dll", "ToggleFullScreen", 0)
         endif
     enddef
 
     def g:ToggleTransparency(): void
         if g:Alpha == 0
             g:Alpha = 1
-            libcallnr("wintweak.dll", "SetAlpha", 220)
+            libcallnr(path .. "/../bin/wintweak.dll", "SetAlpha", 220)
         else
             g:Alpha = 0
-            libcallnr("wintweak.dll", "SetAlpha", 255)
+            libcallnr(path .. "/../bin/wintweak.dll", "SetAlpha", 255)
         endif
     enddef
 
@@ -70,20 +72,20 @@ if has('gui_running')
     def g:ToggleTopmost(): void
         if g:TopMost == 0
             g:TopMost = 1
-            libcallnr("wintweak.dll", "EnableTopMost", 1)
+            libcallnr(path .. "/../bin/wintweak.dll", "EnableTopMost", 1)
         else
             g:TopMost = 0
-            libcallnr("wintweak.dll", "EnableTopMost", 0)
+            libcallnr(path .. "/../bin/wintweak.dll", "EnableTopMost", 0)
         endif
     enddef
 
     def g:ToggleCaption(): void
         if g:Caption == 0
             g:Caption = 1
-            libcallnr("wintweak.dll", "EnableCaption", 1)
+            libcallnr(path .. "/../bin/wintweak.dll", "EnableCaption", 1)
         else
             g:Caption = 0
-            libcallnr("wintweak.dll", "EnableCaption", 0)
+            libcallnr(path .. "/../bin/wintweak.dll", "EnableCaption", 0)
         endif
     enddef
 
