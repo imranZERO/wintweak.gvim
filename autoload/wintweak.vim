@@ -40,7 +40,7 @@ export def ToggleFullScreen(): void
         g:Fullscreen = 1
         libcallnr(path .. "/../bin/wintweak.dll", "ToggleFullScreen", 1)
     else
-        g:Caption = 0
+        g:Fullscreen = 0
         libcallnr(path .. "/../bin/wintweak.dll", "ToggleFullScreen", 0)
     endif
 enddef
