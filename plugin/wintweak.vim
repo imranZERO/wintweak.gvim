@@ -13,3 +13,4 @@ nnoremap <Plug>(Wintweak_GUIOptions) <ScriptCmd>wintweak#ToggleGUIOptions()<cr>
 nnoremap <Plug>(Wintweak_Transparency) <ScriptCmd>wintweak#ToggleTransparency()<cr>
 nnoremap <Plug>(Wintweak_Topmost) <ScriptCmd>wintweak#ToggleTopmost()<cr>
 nnoremap <Plug>(Wintweak_Caption) <ScriptCmd>wintweak#ToggleCaption()<cr>
+nnoremap <Plug>(Wintweak_Maximize) <ScriptCmd>wintweak#ToggleMaximize()<cr>

@@ -4,12 +4,13 @@ g:Fullscreen = 0
 g:Alpha = 0
 g:TopMost = 0
 g:Caption = 1
+g:Maximize = 1
 
 var path = expand('<sfile>:p:h')
 
 export def Wintweak(): void
     popup_menu([
-        \ 'Toggle FullScreen', 'Toggle Gvim Enhancements', 'Toggle Window Transparency', 'Toggle Window Topmost', 'Toggle Caption'],
+        \ 'Toggle FullScreen', 'Toggle Gvim Enhancements', 'Toggle Window Transparency', 'Toggle Window Topmost', 'Toggle Caption', 'Toggle Maximize'],
         \ {filter: 'wintweak#WTPopupMenuFilter', callback: 'wintweak#WTGuiOpMenuhandler', title: 'GUI Options'})
 enddef
 
@@ -32,6 +33,8 @@ export def WTGuiOpMenuhandler(id: number, result: number): void
         ToggleTopmost()
     elseif result == 5
         ToggleCaption()
+    elseif result == 6
+        ToggleMaximize()
     endif
 enddef
 
@@ -80,5 +83,15 @@ export def ToggleCaption(): void
     else
         g:Caption = 0
         libcallnr(path .. "/../bin/wintweak.dll", "EnableCaption", 0)
+    endif
+enddef
+
+export def ToggleMaximize(): void
+    if g:Maximize == 0
+        g:Maximize = 1
+        libcallnr(path .. "/../bin/wintweak.dll", "EnableMaximize", 1)
+    else
+        g:Maximize = 0
+        libcallnr(path .. "/../bin/wintweak.dll", "EnableMaximize", 0)
     endif
 enddef
