@@ -6,21 +6,23 @@ License: MIT License
 
 *FUNCTIONS*
 
+Call C functions from a dynamic library with |libcallnr()| >
+
 	:call libcallnr("wintweak.dll", "ToggleFullScreen", 0)
 	:call libcallnr("wintweak.dll", "SetAlpha", 220)
 	:call libcallnr("wintweak.dll", "EnableTopMost", 1)
 	:call libcallnr("wintweak.dll", "EnableCaption", 1)
 	:call libcallnr("wintweak.dll", "EnableMaximize", 1)
-
+<
 *MAPPINGS*
 
-Create a keymap like this to open the popup menu:
+Create a keymap like this to open the popup menu: >
 
 	nmap <silent> <KEY> <Plug>(Wintweak)
+<
+Press |<KEY>| to open the popup menu; type |<ESC>| or |q| to quit.
 
-Press `<KEY>` to open the popup menu; type `<ESC>` or `q` to quit.
-
-To map the individual functions:
+To map the individual functions: >
 
 	nmap <silent> <KEY> <Plug>(Wintweak)
 	nmap <silent> <KEY> <Plug>(Wintweak_FullScreen)
@@ -29,3 +31,18 @@ To map the individual functions:
 	nmap <silent> <KEY> <Plug>(Wintweak_Topmost)
 	nmap <silent> <KEY> <Plug>(Wintweak_Caption)
 	nmap <silent> <KEY> <Plug>(Wintweak_Maximize)
+	nmap <silent> <KEY> <Plug>(Wintweak_Cpicker)
+<
+Example keymaps: >
+
+	" Popup menu
+        nnoremap <F10> <Plug>(Wintweak)
+	" Toggle fullscreen
+        nnoremap <m-cr> <Plug>(Wintweak_FullScreen)
+	" RGB Color Picker (normal mode)
+        nnoremap <m-c> <Plug>(Wintweak_Cpicker)
+	" RGB Color Picker (insert mode)
+        inoremap <m-c> <Esc><Plug>(Wintweak_Cpicker)
+<
+
+ vim:tw=78:ts=8:noet:ft=help:norl:
