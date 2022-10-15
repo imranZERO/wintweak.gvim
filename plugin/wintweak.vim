@@ -14,3 +14,4 @@ nnoremap <Plug>(Wintweak_Transparency) <ScriptCmd>wintweak#ToggleTransparency()<
 nnoremap <Plug>(Wintweak_Topmost) <ScriptCmd>wintweak#ToggleTopmost()<cr>
 nnoremap <Plug>(Wintweak_Caption) <ScriptCmd>wintweak#ToggleCaption()<cr>
 nnoremap <Plug>(Wintweak_Maximize) <ScriptCmd>wintweak#ToggleMaximize()<cr>
+nnoremap <Plug>(Wintweak_Cpicker) <ScriptCmd>wintweak#Cpicker()<cr>

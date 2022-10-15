@@ -10,7 +10,8 @@ var path = expand('<sfile>:p:h')
 
 export def Wintweak(): void
     popup_menu([
-        \ 'Toggle FullScreen', 'Toggle Gvim Enhancements', 'Toggle Window Transparency', 'Toggle Window Topmost', 'Toggle Caption', 'Toggle Maximize'],
+        \ 'Gvim Enhancements', 'Color Picker', 'FullScreen', 'Maximize/Restore', 'Window Transparency',
+        \ 'Topmost Window', 'Window Caption'],
         \ {filter: 'wintweak#WTPopupMenuFilter', callback: 'wintweak#WTGuiOpMenuhandler', title: 'GUI Options'})
 enddef
 
@@ -24,18 +25,27 @@ enddef
 
 export def WTGuiOpMenuhandler(id: number, result: number): void
     if result == 1
-        ToggleFullScreen()
-    elseif result == 2
         ToggleGUIOptions()
+    elseif result == 2
+        Cpicker()
     elseif result == 3
-        ToggleTransparency()
+        ToggleFullScreen()
     elseif result == 4
-        ToggleTopmost()
-    elseif result == 5
-        ToggleCaption()
-    elseif result == 6
         ToggleMaximize()
+    elseif result == 5
+        ToggleTransparency()
+    elseif result == 6
+        ToggleTopmost()
+    elseif result == 7
+        ToggleCaption()
     endif
+enddef
+
+$CPICKER = expand('<sfile>:p:h:h') .. "\\bin\\cpicker.exe"
+
+export def Cpicker(): void
+    @+ = system("%CPICKER%")
+    exec "normal \"+p"
 enddef
 
 export def ToggleFullScreen(): void
