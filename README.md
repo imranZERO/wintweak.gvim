@@ -21,45 +21,41 @@ Requirements: `GVim 9.0`, `Windows 7+`, `.NET Framework 2+`
 
 Use your preferred plugin manager or vim's built-in package management; see `:help packages` for more information.
 
+**NOTE:** Only 64-bit precompiled DLL's are provided; if you want to use 32-bit, you have to compile it yourself. Run `make` to build with MinGW or `build.bat` to use MSVC.
+
 Usage
 -----
 
-Create a keymap like this to open the popup menu:
+Type `:Wintweak` or `:WT` to open the popup menu with all of the options, `<ESC>` or `q` to close it.
+
+To execute the individual functions:
 
 ```vim
-nmap <silent> <KEY> <Plug>(Wintweak)
+:Wintweak
+:WTFullScreen
+:WTGUIOptions
+:WTTransparency
+:WTTopmost
+:WTCaption
+:WTMaximize
+:WTCpicker
 ```
 
-Press `<KEY>` to open the popup menu; type `<ESC>` or `q` to quit.
-
-To map the individual functions:
-
-```vim
-nmap <silent> <KEY> <Plug>(Wintweak)
-nmap <silent> <KEY> <Plug>(Wintweak_FullScreen)
-nmap <silent> <KEY> <Plug>(Wintweak_GUIOptions)
-nmap <silent> <KEY> <Plug>(Wintweak_Transparency)
-nmap <silent> <KEY> <Plug>(Wintweak_Topmost)
-nmap <silent> <KEY> <Plug>(Wintweak_Caption)
-nmap <silent> <KEY> <Plug>(Wintweak_Maximize)
-nmap <silent> <KEY> <Plug>(Wintweak_Cpicker)
-```
-
-Example configuration:
-----------------------
+Example keymaps:
+----------------
 
 ```vim
 " Popup menu
-nnoremap <F10> <Plug>(Wintweak)
+nnoremap <F10> <Cmd>Wintweak<cr>
 
 " Toggle fullscreen
-nnoremap <m-cr> <Plug>(Wintweak_FullScreen)
+nnoremap <m-cr> <Cmd>WTFullScreen<cr>
 
 " RGB Color Picker (normal mode)
-nnoremap <m-c> <Plug>(Wintweak_Cpicker)
+nnoremap <m-c> <Cmd>WTCpicker<cr>
 
 " RGB Color Picker (insert mode)
-inoremap <m-c> <Esc><Plug>(Wintweak_Cpicker)
+inoremap <m-c> <Esc><Cmd>WTCpicker<cr>
 
 " and any other wintweak functions.
 ```
