@@ -13,6 +13,7 @@ Features
 - Maximize/Restore.
 - Toggle window caption/titlebar.
 - Toggle GVim enhancements (menu, toolbar, scrollbar)
+- Pop-up menu for easy access to all functions. 
 
 Installation
 ------------
@@ -51,11 +52,9 @@ nnoremap <F10> <Cmd>Wintweak<cr>
 " Toggle fullscreen
 nnoremap <m-cr> <Cmd>WTFullScreen<cr>
 
-" RGB Color Picker (normal mode)
+" RGB Color Picker (normal & insert mode)
 nnoremap <m-c> <Cmd>WTCpicker<cr>
-
-" RGB Color Picker (insert mode)
-inoremap <m-c> <Esc><Cmd>WTCpicker<cr>
+inoremap <m-c> <Cmd>WTCpicker<cr>
 
 " and any other wintweak functions.
 ```
