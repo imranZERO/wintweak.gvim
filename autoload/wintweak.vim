@@ -33,7 +33,7 @@ export def WTGuiOpMenuhandler(id: number, result: number): void
     elseif result == 4
         ToggleMaximize()
     elseif result == 5
-        ToggleTransparency()
+        Transparency()
     elseif result == 6
         ToggleTopmost()
     elseif result == 7
@@ -58,10 +58,10 @@ export def ToggleFullScreen(): void
     endif
 enddef
 
-export def ToggleTransparency(): void
+export def Transparency(val = 220): void
     if g:Alpha == 0
         g:Alpha = 1
-        libcallnr(dll_path, "SetAlpha", 220)
+        libcallnr(dll_path, "SetAlpha", val)
     else
         g:Alpha = 0
         libcallnr(dll_path, "SetAlpha", 255)

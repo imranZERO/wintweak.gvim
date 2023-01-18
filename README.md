@@ -18,7 +18,7 @@ Features
 Installation
 ------------
 
-Requirements: `GVim 9.0`, `Windows 7+`, `.NET Framework 2+`
+Requirements: `GVim 9.0+`, `Windows 7+`, `.NET Framework 2+`
 
 Use your preferred plugin manager or vim's built-in package management; see `:help packages` for more information.
 
@@ -41,6 +41,8 @@ To execute the individual functions:
 :WTMaximize
 :WTCpicker
 ```
+
+`WTTransparency` supports one argument of `0-255` corresponding to window opacity, with a default value of 220.
 
 Example keymaps:
 ----------------
