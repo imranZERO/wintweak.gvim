@@ -6,7 +6,7 @@ g:TopMost = 0
 g:Caption = 1
 g:Maximize = 1
 
-var path = expand('<sfile>:p:h')
+var dll_path = expand('<sfile>:p:h') .. "/../bin/wintweak.dll"
 
 export def Wintweak(): void
     popup_menu([
@@ -51,20 +51,20 @@ enddef
 export def ToggleFullScreen(): void
     if g:Fullscreen == 0
         g:Fullscreen = 1
-        libcallnr(path .. "/../bin/wintweak.dll", "ToggleFullScreen", 1)
+        libcallnr(dll_path, "ToggleFullScreen", 1)
     else
         g:Fullscreen = 0
-        libcallnr(path .. "/../bin/wintweak.dll", "ToggleFullScreen", 0)
+        libcallnr(dll_path, "ToggleFullScreen", 0)
     endif
 enddef
 
 export def ToggleTransparency(): void
     if g:Alpha == 0
         g:Alpha = 1
-        libcallnr(path .. "/../bin/wintweak.dll", "SetAlpha", 220)
+        libcallnr(dll_path, "SetAlpha", 220)
     else
         g:Alpha = 0
-        libcallnr(path .. "/../bin/wintweak.dll", "SetAlpha", 255)
+        libcallnr(dll_path, "SetAlpha", 255)
     endif
 enddef
 
@@ -79,29 +79,29 @@ enddef
 export def ToggleTopmost(): void
     if g:TopMost == 0
         g:TopMost = 1
-        libcallnr(path .. "/../bin/wintweak.dll", "EnableTopMost", 1)
+        libcallnr(dll_path, "EnableTopMost", 1)
     else
         g:TopMost = 0
-        libcallnr(path .. "/../bin/wintweak.dll", "EnableTopMost", 0)
+        libcallnr(dll_path, "EnableTopMost", 0)
     endif
 enddef
 
 export def ToggleCaption(): void
     if g:Caption == 0
         g:Caption = 1
-        libcallnr(path .. "/../bin/wintweak.dll", "EnableCaption", 1)
+        libcallnr(dll_path, "EnableCaption", 1)
     else
         g:Caption = 0
-        libcallnr(path .. "/../bin/wintweak.dll", "EnableCaption", 0)
+        libcallnr(dll_path, "EnableCaption", 0)
     endif
 enddef
 
 export def ToggleMaximize(): void
     if g:Maximize == 0
         g:Maximize = 1
-        libcallnr(path .. "/../bin/wintweak.dll", "EnableMaximize", 1)
+        libcallnr(dll_path, "EnableMaximize", 1)
     else
         g:Maximize = 0
-        libcallnr(path .. "/../bin/wintweak.dll", "EnableMaximize", 0)
+        libcallnr(dll_path, "EnableMaximize", 0)
     endif
 enddef
