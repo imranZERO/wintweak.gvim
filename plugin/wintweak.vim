@@ -1,6 +1,6 @@
 vim9script
 
-if exists('g:loaded_wintweak') || !has('win32') || !has('gui_running') || v:version < 900
+if exists('g:loaded_wintweak') || !has('gui_win32') || v:version < 900
     finish
 endif
 g:loaded_wintweak = 1
